@@ -1,4 +1,11 @@
 const container = document.querySelector('.container');
+const colorSearchTerm = document.querySelector(".color-search-term");
+
+const clearContainer = (containerElement) => {
+    while (containerElement.firstChild) {
+        containerElement.removeChild(containerElement.lastChild);
+    }
+}
 
 const colorCardChild = (classNames, data) => {
     const colorCardChildElement = document.createElement('div');
@@ -38,4 +45,28 @@ const colorCard = (color) => {
 DefinedColors.colors.forEach(color => {
     const cardElement = colorCard(color);    
     container.appendChild(cardElement);
+});
+
+colorSearchTerm.addEventListener("input", (event) => {
+    const term = event.target.value;
+    clearContainer(container);
+
+    const filteredColorsExactMatch = DefinedColors.colors.filter((color) => {
+        return color.colorName === term;
+    });
+
+    const filteredColorsStartsWith = DefinedColors.colors.filter((color) => {
+        return color.colorName.startsWith(term) && color.colorName !== term;
+    });
+
+    const filteredColorsContainingTerm = DefinedColors.colors.filter((color) => {
+        return color.colorName.includes(term) && !color.colorName.startsWith(term) && color.colorName !== term;
+    });
+
+    const filteredColors = [...filteredColorsExactMatch, ...filteredColorsStartsWith, ...filteredColorsContainingTerm];
+
+    filteredColors.forEach(color => {
+        const cardElement = colorCard(color);    
+        container.appendChild(cardElement);
+    });
 });

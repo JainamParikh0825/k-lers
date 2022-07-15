@@ -6,10 +6,15 @@
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     background-color: #e7ecef;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+main{
+    min-height: 100vh;
 }
 
 main h1{
@@ -43,6 +48,23 @@ main p{
     flex-wrap: wrap;
     padding: 0 2rem;
     margin-top: 30px;
+}
+
+.color-search{
+    width: 50%;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background: transparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: 3px solid #22223b;
+    border-radius: 3px;
+    outline: none;
 }
 
 .color-card{
