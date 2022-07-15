@@ -133,11 +133,17 @@ footer{
     .color-card {
         width: 21rem;
     }
+    .color-search{
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 816px) {
     .color-card {
         width: 19rem;
+    }
+    .color-search {
+        width: 65%;
     }
 }
 
@@ -145,10 +151,18 @@ footer{
     .color-card{
         width: 35rem;
     }
+    .color-search {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 395px) {
     .color-card{
         min-width: 15rem;
+    }
+    .color-search{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
