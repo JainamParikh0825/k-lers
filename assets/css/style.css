@@ -75,6 +75,14 @@ main p{
     cursor: pointer;
 }
 
+footer{
+    width: 100%;
+    background-color: #22223b;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
 @media screen and (max-width: 1393px) {
     .color-card{
         width: 22rem;
