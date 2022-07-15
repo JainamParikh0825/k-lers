@@ -48,7 +48,7 @@ DefinedColors.colors.forEach(color => {
 });
 
 colorSearchTerm.addEventListener("input", (event) => {
-    const term = event.target.value;
+    const term = event.target.value.toLowerCase();
     clearContainer(container);
 
     const filteredColorsExactMatch = DefinedColors.colors.filter((color) => {
