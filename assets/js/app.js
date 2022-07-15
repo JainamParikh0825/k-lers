@@ -6,7 +6,7 @@ const colorCardChild = (classNames, data) => {
     colorCardChildElement.textContent = data;
     colorCardChildElement.onclick = () => {
         document.execCommand("copy");
-        colorCardChildElement.textContent = 'copied';
+        colorCardChildElement.textContent = 'copied ✅';
     }
     colorCardChildElement.addEventListener('copy', (event) => {
         event.preventDefault();

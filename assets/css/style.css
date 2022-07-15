@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ body{
     height: 100vh;
     background-color: #e7ecef;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 main h1{
@@ -20,7 +22,17 @@ main h1{
     top: 0;
     left: 0;
     z-index: 9999;
+    font-weight: 900;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+main p{
+    margin-top: 110px;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.3rem;
+    padding: 0 20px;
 }
 
 .container{
@@ -30,7 +42,7 @@ main h1{
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 0 2rem;
-    margin-top: 110px;
+    margin-top: 30px;
 }
 
 .color-card{
@@ -45,6 +57,11 @@ main h1{
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     margin: 0 10px 40px 10px;
+    transition: transform 0.2s;
+}
+
+.color-card:hover{
+    transform: scale(0.98);
 }
 
 .color-name,
@@ -53,7 +70,55 @@ main h1{
     background-color: #000;
     padding: 10px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 2px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1393px) {
+    .color-card{
+        width: 22rem;
+    }
+}
+
+@media screen and (max-width: 1241px) {
+    .color-card{
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 1141px) {
+    .color-card {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 1039px) {
+    .color-card {
+        width: 23rem;
+    }
+}
+
+@media screen and (max-width: 884px) {
+    .color-card {
+        width: 21rem;
+    }
+}
+
+@media screen and (max-width: 816px) {
+    .color-card {
+        width: 19rem;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .color-card{
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .color-card{
+        min-width: 15rem;
+    }
 }
