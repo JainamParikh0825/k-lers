@@ -50,20 +50,22 @@ DefinedColors.colors.forEach(color => {
 colorSearchTerm.addEventListener("input", (event) => {
     const term = event.target.value.toLowerCase();
     clearContainer(container);
+    
+    let filteredColors = [];
+    const filteredColorsExactMatch = [];
+    const filteredColorsStartsWith = [];
+    const filteredColorsContainingTerm = [];
 
-    const filteredColorsExactMatch = DefinedColors.colors.filter((color) => {
-        return color.colorName === term;
+    DefinedColors.colors.forEach(color => {
+        if (color.colorName === term)
+            filteredColorsExactMatch.push(color);
+        else if (color.colorName.startsWith(term) && color.colorName !== term)
+            filteredColorsStartsWith.push(color);
+        else if (color.colorName.includes(term) && !color.colorName.startsWith(term) && color.colorName !== term)
+            filteredColorsContainingTerm.push(color);
     });
 
-    const filteredColorsStartsWith = DefinedColors.colors.filter((color) => {
-        return color.colorName.startsWith(term) && color.colorName !== term;
-    });
-
-    const filteredColorsContainingTerm = DefinedColors.colors.filter((color) => {
-        return color.colorName.includes(term) && !color.colorName.startsWith(term) && color.colorName !== term;
-    });
-
-    const filteredColors = [...filteredColorsExactMatch, ...filteredColorsStartsWith, ...filteredColorsContainingTerm];
+    filteredColors = [...filteredColorsExactMatch, ...filteredColorsStartsWith, ...filteredColorsContainingTerm];
 
     filteredColors.forEach(color => {
         const cardElement = colorCard(color);    
